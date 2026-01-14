@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fdfbf7;
+  --color-foreground: #171717;
+
+  --color-primary: #8844a6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #d4d952;
+  --color-secondary-foreground: #000000;
+
+  --color-accent: #f2a922;
+  --color-accent-foreground: #000000;
+
+  --color-accent-light: #f2c063;
+
+  --color-destructive: #d95829;
+  --color-destructive-foreground: #ffffff;
+
+  --color-kid-bg: #fdfbf7;
+  --color-kid-surface: #ffffff;
+
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+
+  --font-sans: var(--font-cairo), sans-serif;
+
+  --shadow-soft-sm: 0 2px 8px -2px rgba(136, 68, 166, 0.1);
+  --shadow-soft: 0 8px 24px -6px rgba(136, 68, 166, 0.15);
+  --shadow-soft-hover: 0 12px 32px -8px rgba(136, 68, 166, 0.25);
+  --shadow-3d: 0 6px 0 0 #6a3582;
+  --shadow-3d-pressed: 0 2px 0 0 #6a3582;
+}
+
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keep light mode for kids app */
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-light);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
